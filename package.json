@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sclampet/js_algos#readme",
   "devDependencies": {
+    "jest-cli": "^24.8.0",
     "jest": "^24.8.0"
   }
 }
