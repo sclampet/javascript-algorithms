@@ -1,6 +1,6 @@
 //Given cents, return the fewest number of coins it would take to total cents
 
-function genCoinChange(cents) {
+function genCoinChange(cents, exclude) {
  const demonitations = [
    {
      name: 'quarters',
@@ -23,8 +23,10 @@ function genCoinChange(cents) {
  var result = {}
 
  for (let denom of demonitations) {
-    result[denom.name] = Math.floor(cents/denom.value)
-    cents %= denom.value
+    if(denom.value !== exclude) {
+      result[denom.name] = Math.floor(cents/denom.value)
+      cents %= denom.value
+    }
  }
  return result;
 
@@ -32,7 +34,7 @@ function genCoinChange(cents) {
 
 }
 
-console.log(genCoinChange(94))
+console.log(genCoinChange(31, 5))
 
 module.exports = {
   genCoinChange
